@@ -1,6 +1,8 @@
 <?php
-/**
- * This file is part of NoiseLabs-SmartyBundle
+/*
+ * This file is part of the NoiseLabs-SmartyBundle package.
+ *
+ * Copyright (c) 2011-2021 Vítor Brandão <vitor@noiselabs.io>
  *
  * NoiseLabs-SmartyBundle is free software; you can redistribute it
  * and/or modify it under the terms of the GNU Lesser General Public
@@ -15,15 +17,8 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with NoiseLabs-SmartyBundle; if not, see
  * <http://www.gnu.org/licenses/>.
- *
- * Copyright (C) 2011-2018 Vítor Brandão
- *
- * @category    NoiseLabs
- * @package     SmartyBundle
- * @copyright   (C) 2011-2018 Vítor Brandão <vitor@noiselabs.io>
- * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL-3
- * @link        https://www.noiselabs.io
  */
+declare(strict_types=1);
 
 namespace NoiseLabs\Bundle\SmartyBundle\Command;
 
@@ -53,6 +48,8 @@ class CompileCommand extends Command
      */
     private $finder;
 
+    protected static $defaultName = 'smarty:compile';
+
     public function __construct(SmartyEngine $engine, TemplateFinder $finder)
     {
         parent::__construct();
@@ -64,23 +61,21 @@ class CompileCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('smarty:compile')
+            ->setDefinition([
+                new InputArgument('bundle', InputArgument::OPTIONAL, 'The bundle name or directory where to load the templates'),
+            ])
             ->setDescription('Compiles all known Smarty templates')
-            ->addArgument(
-                'bundle',
-                InputArgument::OPTIONAL,
-                'A bundle name'
-            )
-            ->setHelp(<<<EOF
-The following command finds all known Smarty templates and compiles them:
+            ->setHelp(
+                <<<'EOF'
+                    The following command finds all known Smarty templates and compiles them:
 
-<info>php %command.full_name%</info>
+                    <info>php %command.full_name%</info>
 
-Alternatively you may pass an optional <comment>@AcmeMyBundle</comment> argument to only search
-for templates in a specific bundle:
+                    Alternatively you may pass an optional <comment>@AcmeMyBundle</comment> argument to only search
+                    for templates in a specific bundle:
 
-<info>php %command.full_name% @AcmeMyBundle</info>
-EOF
+                    <info>php %command.full_name% @AcmeMyBundle</info>
+                    EOF
             )
         ;
     }
@@ -98,7 +93,7 @@ EOF
         }
 
         $totalCtime = 0;
-        $count = array('ok' => 0, 'failed' => 0);
+        $count = ['ok' => 0, 'failed' => 0];
         foreach ($templates as $template) {
             try {
                 $startTime = microtime(true);
@@ -112,18 +107,14 @@ EOF
                     if ($verbose) {
                         $output->writeln(sprintf("Compiled <info>%s</info>\n(into \"%s\") <comment>in %f secs</comment>", $source->resource, $compiled->filepath, $ctime));
                     }
-                    $count['ok']++;
+                    ++$count['ok'];
                 } else {
                     throw new \RuntimeException('Unable to create a Smarty_Internal_Template instance');
                 }
             } catch (\Exception $e) {
                 $e = SmartyBundleRuntimeException::createFromPrevious($e, $template);
-                // problem during compilation, log it and give up
-                if ($verbose) {
-                    $output->writeln("");
-                }
                 $output->writeln(sprintf("<error>ERROR: Failed to compile Smarty template \"%s\"</error>\n-> %s\n", (string) $template, $e->getMessage()));
-                $count['failed']++;
+                ++$count['failed'];
             }
         }
 
@@ -135,5 +126,7 @@ EOF
             $output->write(sprintf("- Failed to compile <error>%d</error> files.\n", $count['failed']));
         }
         $output->write(sprintf("- Total compilation time: <comment>%f secs</comment>.\n", $totalCtime));
+
+        return $count['failed'] > 0 ? -1 : 0;
     }
 }
