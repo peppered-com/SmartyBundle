@@ -37,7 +37,6 @@ use Smarty;
 use Smarty_Internal_Runtime_TplFunction;
 use Smarty_Internal_Template;
 use SmartyException;
-use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Bundle\FrameworkBundle\Templating\GlobalVariables;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -53,7 +52,7 @@ use Symfony\Component\HttpFoundation\Response;
  *
  * @author Vítor Brandão <vitor@noiselabs.io>
  */
-class SmartyEngine implements EngineInterface
+class SmartyEngine
 {
     /**
      * @var ExtensionInterface[]
@@ -228,7 +227,7 @@ class SmartyEngine implements EngineInterface
          *
          * Too learn more see {@link http://www.smarty.net/docs/en/api.assign.tpl}
          */
-         $this->smarty->assign($parameters);
+        $this->smarty->assign($parameters);
 
         /**
          * This returns the template output instead of displaying it. Supply a

@@ -30,7 +30,6 @@ namespace NoiseLabs\Bundle\SmartyBundle\Extension;
 use NoiseLabs\Bundle\SmartyBundle\Extension\Plugin\BlockPlugin;
 use NoiseLabs\Bundle\SmartyBundle\Extension\Plugin\ModifierPlugin;
 use Smarty_Internal_Template;
-use Symfony\Component\Translation\TranslatorInterface;
 
 /**
  * Provides integration of the Translation component with Smarty[Bundle].
@@ -41,7 +40,7 @@ class TranslationExtension extends AbstractExtension
 {
     protected $translator;
 
-    public function __construct(TranslatorInterface $translator)
+    public function __construct($translator)
     {
         $this->translator = $translator;
     }
