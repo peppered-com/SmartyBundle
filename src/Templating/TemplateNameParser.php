@@ -35,7 +35,7 @@ class TemplateNameParser extends BaseTemplateNameParser
     /**
      * {@inheritdoc}
      */
-    public function parse($name)
+    public function parse($name): TemplateReferenceInterface
     {
         if ($name instanceof TemplateReferenceInterface) {
             return $name;

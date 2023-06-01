@@ -80,7 +80,7 @@ class CompileCommand extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $bundleName = $input->getArgument('bundle');
         $verbose = $input->getOption('verbose');

@@ -54,7 +54,7 @@ class Configuration implements ConfigurationInterface
      *         use_sub_dirs:  true
      * </code>
      */
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('smarty');
         $rootNode = $treeBuilder->getRootNode();

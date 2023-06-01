@@ -33,7 +33,7 @@ class FilesystemLoader implements LoaderInterface
     /**
      * {@inheritdoc}
      */
-    public function load(TemplateReferenceInterface $template)
+    public function load(TemplateReferenceInterface $template): FileStorage|false
     {
         try {
             $file = $this->locator->locate($template);
@@ -47,7 +47,7 @@ class FilesystemLoader implements LoaderInterface
     /**
      * {@inheritdoc}
      */
-    public function isFresh(TemplateReferenceInterface $template, $time)
+    public function isFresh(TemplateReferenceInterface $template, $time): bool
     {
         if (false === $storage = $this->load($template)) {
             return false;
