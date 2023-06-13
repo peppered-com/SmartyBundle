@@ -23,7 +23,6 @@ declare(strict_types=1);
 namespace NoiseLabs\Bundle\SmartyBundle\Loader;
 
 use NoiseLabs\Bundle\SmartyBundle\Templating\TemplateFilenameParser;
-use Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinderInterface;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
@@ -36,7 +35,7 @@ use Symfony\Component\Templating\TemplateReferenceInterface;
  * @author Victor Berchet <victor@suumit.com>
  * @author Vítor Brandão <vitor@noiselabs.io>
  */
-class TemplateFinder implements TemplateFinderInterface
+class TemplateFinder
 {
     /**
      * @var KernelInterface
