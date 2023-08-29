@@ -1,3 +1,10 @@
+Peppered SmartyBundle
+============
+
+The SmartyBundle works only until Symfony 4, and it is marked as deprecated for Symfony 5. This repository contains a modified SmartyBundle that you can use to keep using Smarty allowing you to upgrade to Symfony 5.4
+
+Official documentation below.
+
 SmartyBundle
 ============
 
