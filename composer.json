@@ -29,7 +29,7 @@
         "php": "^7.1|^8",
         "ext-intl": "*",
         "ext-simplexml": "*",
-        "smarty/smarty": "^3.1.40",
+        "smarty/smarty": "dev-support/3.1#92bb93d05179381a907a3837b38d1cd315d8edad",
         "symfony/framework-bundle": "^4|^5",
         "symfony/polyfill-php80": "^1.23",
         "symfony/templating": "^4|^5"
@@ -68,5 +68,11 @@
         "test-unit": "@test --testsuite=unit",
         "test-functional": "@test --testsuite=functional",
         "server:start": "@php -v"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/peppered-com/smarty"
+        }
+    ]
 }
