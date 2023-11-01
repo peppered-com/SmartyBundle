@@ -68,5 +68,11 @@
         "test-unit": "@test --testsuite=unit",
         "test-functional": "@test --testsuite=functional",
         "server:start": "@php -v"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/smarty-php/smarty"
+        }
+    ]
 }
