@@ -32,20 +32,20 @@
         "smarty/smarty": "dev-support/3.1#92bb93d05179381a907a3837b38d1cd315d8edad",
         "symfony/framework-bundle": "^4|^5|^6|^7",
         "symfony/polyfill-php80": "^1.23",
-        "symfony/templating": "^4|^5"
+        "symfony/templating": "^4|^5|^6|^7"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
-        "symfony/asset": "^4|^5",
-        "symfony/browser-kit": "^4|^5",
-        "symfony/console": "^4|^5",
-        "symfony/css-selector": "^4|^5",
-        "symfony/expression-language": "^4|^5",
+        "symfony/asset": "^4|^5|^6|^7",
+        "symfony/browser-kit": "^4|^5|^6|^7",
+        "symfony/console": "^4|^5|^6|^7",
+        "symfony/css-selector": "^4|^5|^6|^7",
+        "symfony/expression-language": "^4|^5|^6|^7",
         "symfony/phpunit-bridge": "^5",
-        "symfony/security": "^3.4.48|^4|^5",
-        "symfony/security-acl": "^3|^4|^5",
-        "symfony/translation": "^4|^5",
-        "symfony/yaml": "^4|^5"
+        "symfony/security": "^3.4.48|^4|^5|^6|^7",
+        "symfony/security-acl": "^3|^4|^5|^6|^7",
+        "symfony/translation": "^4|^5|^6|^7",
+        "symfony/yaml": "^4|^5|^6|^7"
     },
     "autoload": {
         "psr-4": {
