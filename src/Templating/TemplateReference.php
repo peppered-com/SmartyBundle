@@ -38,7 +38,7 @@ class TemplateReference extends BaseTemplateReference
      *
      * @return string A path to the template or a resource
      */
-    public function getPath()
+    public function getPath(): string
     {
         $controller = str_replace('\\', '/', $this->get('controller'));
 
@@ -50,7 +50,7 @@ class TemplateReference extends BaseTemplateReference
     /**
      * {@inheritdoc}
      */
-    public function getLogicalName()
+    public function getLogicalName(): string
     {
         return sprintf('%s:%s:%s.%s.%s', $this->parameters['bundle'], $this->parameters['controller'], $this->parameters['name'], $this->parameters['format'], $this->parameters['engine']);
     }
