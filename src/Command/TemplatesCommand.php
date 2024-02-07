@@ -41,8 +41,6 @@ class TemplatesCommand extends Command
      */
     private $finder;
 
-    protected static $defaultName = 'smarty:templates';
-
     public function __construct(TemplateFinder $finder)
     {
         parent::__construct();
@@ -50,9 +48,10 @@ class TemplatesCommand extends Command
         $this->finder = $finder;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
+            ->setName('smarty:templates')
             ->setDefinition([
                 new InputArgument('bundle', InputArgument::OPTIONAL, 'The bundle name where to load the templates'),
             ])

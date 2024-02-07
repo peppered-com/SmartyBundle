@@ -48,8 +48,6 @@ class CompileCommand extends Command
      */
     private $finder;
 
-    protected static $defaultName = 'smarty:compile';
-
     public function __construct(SmartyEngine $engine, TemplateFinder $finder)
     {
         parent::__construct();
@@ -58,9 +56,10 @@ class CompileCommand extends Command
         $this->finder = $finder;
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
+            ->setName('smarty:compile')
             ->setDefinition([
                 new InputArgument('bundle', InputArgument::OPTIONAL, 'The bundle name or directory where to load the templates'),
             ])

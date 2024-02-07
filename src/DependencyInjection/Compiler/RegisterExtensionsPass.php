@@ -22,9 +22,9 @@ declare(strict_types=1);
 
 namespace NoiseLabs\Bundle\SmartyBundle\DependencyInjection\Compiler;
 
-use Symfony\Component\DependencyInjection\Reference;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Reference;
 
 /**
  * Adds tagged smarty.extension services to smarty service.
@@ -33,7 +33,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
  */
 class RegisterExtensionsPass implements CompilerPassInterface
 {
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         if (false === $container->hasDefinition('templating.engine.smarty')) {
             return;
