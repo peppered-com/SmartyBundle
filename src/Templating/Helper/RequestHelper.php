@@ -13,7 +13,6 @@ namespace NoiseLabs\Bundle\SmartyBundle\Templating\Helper;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\Templating\Helper\Helper;
 
 /**
  * RequestHelper provides access to the current request parameters.

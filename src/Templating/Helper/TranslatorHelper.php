@@ -11,7 +11,6 @@
 
 namespace NoiseLabs\Bundle\SmartyBundle\Templating\Helper;
 
-use Symfony\Component\Templating\Helper\Helper;
 use Symfony\Component\Translation\TranslatorInterface as LegacyTranslatorInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Contracts\Translation\TranslatorTrait;

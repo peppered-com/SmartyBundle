@@ -12,7 +12,6 @@
 namespace NoiseLabs\Bundle\SmartyBundle\Templating\Helper;
 
 use Symfony\Component\Asset\Packages;
-use Symfony\Component\Templating\Helper\Helper;
 
 /**
  * AssetsHelper helps manage asset URLs.

@@ -13,7 +13,6 @@ namespace NoiseLabs\Bundle\SmartyBundle\Templating\Helper;
 
 use Symfony\Component\HttpKernel\Controller\ControllerReference;
 use Symfony\Component\HttpKernel\Fragment\FragmentHandler;
-use Symfony\Component\Templating\Helper\Helper;
 
 /**
  * ActionsHelper manages action inclusions.

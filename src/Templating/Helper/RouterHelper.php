@@ -12,7 +12,6 @@
 namespace NoiseLabs\Bundle\SmartyBundle\Templating\Helper;
 
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-use Symfony\Component\Templating\Helper\Helper;
 
 /**
  * RouterHelper manages links between pages in a template context.

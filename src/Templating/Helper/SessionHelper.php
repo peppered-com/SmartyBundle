@@ -13,7 +13,6 @@ namespace NoiseLabs\Bundle\SmartyBundle\Templating\Helper;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use Symfony\Component\Templating\Helper\Helper;
 
 /**
  * SessionHelper provides read-only access to the session attributes.
