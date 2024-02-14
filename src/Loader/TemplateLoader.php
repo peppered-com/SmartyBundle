@@ -22,9 +22,9 @@ declare(strict_types=1);
 
 namespace NoiseLabs\Bundle\SmartyBundle\Loader;
 
+use NoiseLabs\Bundle\SmartyBundle\Templating\Symfony\Loader\LoaderInterface;
 use NoiseLabs\Bundle\SmartyBundle\Templating\Symfony\TemplateNameParser;
 use NoiseLabs\Bundle\SmartyBundle\Templating\Symfony\TemplateNameParserInterface;
-use Symfony\Component\Templating\Loader\LoaderInterface;
 use Symfony\Component\Templating\TemplateReferenceInterface;
 
 class TemplateLoader
