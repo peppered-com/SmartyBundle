@@ -11,7 +11,7 @@
 
 namespace NoiseLabs\Bundle\SmartyBundle\Tests\Unit\Templating\Helper\Fixtures;
 
-use Symfony\Component\Templating\TemplateNameParserInterface;
+use NoiseLabs\Bundle\SmartyBundle\Templating\Symfony\TemplateNameParserInterface;
 use Symfony\Component\Templating\TemplateReference;
 use Symfony\Component\Templating\TemplateReferenceInterface;
 

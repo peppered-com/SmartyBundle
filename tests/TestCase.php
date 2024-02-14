@@ -24,6 +24,7 @@ namespace NoiseLabs\Bundle\SmartyBundle\Tests;
 
 use NoiseLabs\Bundle\SmartyBundle\Loader\TemplateLoader;
 use NoiseLabs\Bundle\SmartyBundle\SmartyEngine;
+use NoiseLabs\Bundle\SmartyBundle\Templating\Symfony\TemplateNameParser;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 use SimpleXMLElement;
 use Smarty;
@@ -34,7 +35,6 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Templating\Loader\Loader;
 use Symfony\Component\Templating\Storage\StringStorage;
-use Symfony\Component\Templating\TemplateNameParser;
 use Symfony\Component\Templating\TemplateReference;
 use Symfony\Component\Templating\TemplateReferenceInterface;
 

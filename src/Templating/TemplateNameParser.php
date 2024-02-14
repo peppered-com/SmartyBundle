@@ -11,8 +11,8 @@
 
 namespace NoiseLabs\Bundle\SmartyBundle\Templating;
 
+use NoiseLabs\Bundle\SmartyBundle\Templating\Symfony\TemplateNameParser as BaseTemplateNameParser;
 use Symfony\Component\HttpKernel\KernelInterface;
-use Symfony\Component\Templating\TemplateNameParser as BaseTemplateNameParser;
 use Symfony\Component\Templating\TemplateReferenceInterface;
 
 /**

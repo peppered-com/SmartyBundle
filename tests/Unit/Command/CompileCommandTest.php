@@ -25,13 +25,13 @@ namespace NoiseLabs\Bundle\SmartyBundle\Tests\Unit\Command;
 use NoiseLabs\Bundle\SmartyBundle\Command\CompileCommand;
 use NoiseLabs\Bundle\SmartyBundle\Loader\TemplateFinder;
 use NoiseLabs\Bundle\SmartyBundle\SmartyEngine;
+use NoiseLabs\Bundle\SmartyBundle\Templating\Symfony\TemplateNameParser;
 use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
-use Symfony\Component\Templating\TemplateNameParser;
 
 class CompileCommandTest extends TestCase
 {

@@ -11,7 +11,7 @@
 
 namespace NoiseLabs\Bundle\SmartyBundle\Templating;
 
-use Symfony\Component\Templating\TemplateNameParserInterface;
+use NoiseLabs\Bundle\SmartyBundle\Templating\Symfony\TemplateNameParserInterface;
 use Symfony\Component\Templating\TemplateReferenceInterface;
 
 /**
