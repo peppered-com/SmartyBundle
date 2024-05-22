@@ -11,7 +11,7 @@
 
 namespace NoiseLabs\Bundle\SmartyBundle\Templating\Loader;
 
-use Symfony\Component\Config\FileLocatorInterface;
+use NoiseLabs\Bundle\SmartyBundle\Templating\Symfony\Component\Config\FileLocatorInterface;
 use Symfony\Component\Templating\TemplateReferenceInterface;
 
 /**
