@@ -25,7 +25,7 @@ class FilesystemLoader implements LoaderInterface
 {
     protected $locator;
 
-    public function __construct(FileLocatorInterface $locator)
+    public function __construct($locator)
     {
         $this->locator = $locator;
     }
