@@ -35,7 +35,7 @@ class SmartyBundle extends Bundle
 {
     public const VERSION = '4.0.0-dev';
 
-    public function build(ContainerBuilder $container)
+    public function build(ContainerBuilder $container): void
     {
         parent::build($container);
 
