@@ -26,7 +26,7 @@ use Exception;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Console\Application;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
@@ -46,7 +46,7 @@ class SmartyExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container): void
     {
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../../config'));
+        $loader = new PhpFileLoader($container, new FileLocator(__DIR__.'/../../config'));
 
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
@@ -56,7 +56,7 @@ class SmartyExtension extends Extension
 
         if ($this->hasConsole()) {
             // Console commands
-            $loader->load('console.xml');
+            $loader->load('console.php');
         }
     }
 
@@ -70,9 +70,9 @@ class SmartyExtension extends Extension
         return class_exists(Application::class);
     }
 
-    private function registerSmartyConfiguration(array $config, ContainerBuilder $container, XmlFileLoader $loader)
+    private function registerSmartyConfiguration(array $config, ContainerBuilder $container, PhpFileLoader $loader)
     {
-        $loader->load('smarty.xml');
+        $loader->load('smarty.php');
 
         $engineDefinition = $container->getDefinition('templating.engine.smarty');
 
@@ -102,8 +102,8 @@ class SmartyExtension extends Extension
         }
     }
 
-    private function registerTemplatingConfiguration(array $config, ContainerBuilder $container, XmlFileLoader $loader)
+    private function registerTemplatingConfiguration(array $config, ContainerBuilder $container, PhpFileLoader $loader)
     {
-        $loader->load('templating.xml');
+        $loader->load('templating.php');
     }
 }
