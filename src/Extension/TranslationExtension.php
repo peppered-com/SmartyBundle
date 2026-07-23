@@ -70,7 +70,7 @@ class TranslationExtension extends AbstractExtension
      * @param string     $message Message to translate
      * @param null|mixed $repeat
      */
-    public function transBlock(array $params = [], $message = null, Smarty_Internal_Template $template = null, &$repeat = null)
+    public function transBlock(array $params = [], $message = null, ?Smarty_Internal_Template $template = null, &$repeat = null)
     {
         // only output on the closing tag
         if (!$repeat && isset($message)) {
@@ -109,7 +109,7 @@ class TranslationExtension extends AbstractExtension
      * @param string     $message Message to translate
      * @param null|mixed $repeat
      */
-    public function transchoiceBlock(array $params = [], $message = null, Smarty_Internal_Template $template = null, &$repeat = null)
+    public function transchoiceBlock(array $params = [], $message = null, ?Smarty_Internal_Template $template = null, &$repeat = null)
     {
         // only output on the closing tag
         if (!$repeat && isset($message)) {

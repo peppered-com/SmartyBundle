@@ -100,8 +100,8 @@ class SmartyEngine
         TemplateLoader $templateLoader,
         ContainerInterface $container,
         array $options,
-        GlobalVariables $globals = null,
-        LoggerInterface $logger = null
+        ?GlobalVariables $globals = null,
+        ?LoggerInterface $logger = null
     ) {
         $this->smarty = $smarty;
         $this->templateLoader = $templateLoader;
@@ -414,7 +414,7 @@ class SmartyEngine
      *
      * @return Response A Response instance
      */
-    public function renderResponse($view, array $parameters = [], Response $response = null): ?Response
+    public function renderResponse($view, array $parameters = [], ?Response $response = null): ?Response
     {
         if (null === $response) {
             $response = new Response();

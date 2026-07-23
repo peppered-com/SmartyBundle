@@ -55,8 +55,8 @@ class AbstractException extends Exception
         $message,
         $lineno = -1,
         $filename = null,
-        Smarty_Internal_Template $template = null,
-        Exception $previous = null
+        ?Smarty_Internal_Template $template = null,
+        ?Exception $previous = null
     ) {
         parent::__construct('', 0, $previous);
 

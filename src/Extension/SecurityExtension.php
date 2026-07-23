@@ -45,7 +45,7 @@ class SecurityExtension extends AbstractExtension
      */
     protected $csrfTokenManager;
 
-    public function __construct(AuthorizationCheckerInterface $authorizationChecker = null, CsrfTokenManagerInterface $csrfTokenManager = null)
+    public function __construct(?AuthorizationCheckerInterface $authorizationChecker = null, ?CsrfTokenManagerInterface $csrfTokenManager = null)
     {
         $this->authorizationChecker = $authorizationChecker;
         $this->csrfTokenManager = $csrfTokenManager;

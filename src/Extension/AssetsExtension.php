@@ -44,7 +44,7 @@ class AssetsExtension extends AbstractExtension
     /**
      * Constructor.
      */
-    public function __construct(Packages $packages = null)
+    public function __construct(?Packages $packages = null)
     {
         $this->packages = $packages;
     }
@@ -120,7 +120,7 @@ class AssetsExtension extends AbstractExtension
      *
      * @return string
      */
-    public function getAssetsVersion(array $parameters = [], Smarty_Internal_Template $template = null)
+    public function getAssetsVersion(array $parameters = [], ?Smarty_Internal_Template $template = null)
     {
         $parameters = array_merge([
             'package' => null,
